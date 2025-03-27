@@ -65,3 +65,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+setTimeout(() => {
+    let img = document.createElement("img");
+    img.src = "/download.png"; // Change path if needed
+    img.alt = "ze guard";
+    img.className = "corner-image";
+
+    Object.assign(img.style, {
+        position: "fixed",
+        bottom: "-10px", // ⬇️ Moves it lower
+        left: "0px",
+        width: "180px", // 📏 Made slightly smaller
+        height: "auto",
+        zIndex: "9999999999",
+        pointerEvents: "none",
+        display: "block",
+        filter: "none",
+        opacity: "1",
+        mixBlendMode: "normal",
+        background: "none"
+    });
+
+    document.documentElement.appendChild(img); // Adds to the page
+}, 1000);
