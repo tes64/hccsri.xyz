@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <style>
+        .corner-image {
+            position: fixed !important;
+            bottom: 0px !important;
+            left: 0px !important;
+            width: 350px !important;
+            height: auto !important;
+            z-index: 9999 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            display: block !important;
+            pointer-events: none !important;
+        }
+    </style>
+
+<video id="videoElement" width="600" height="auto" loop muted playsinline>
+    <source src="output.webm" type="video/webm">
+</video>
+
+<button id="playButton">Play Video</button>
+
+<script>
+    document.getElementById('playButton').addEventListener('click', function() {
+        var video = document.getElementById('videoElement');
+        video.style.display = 'block';  // Show the video
+        video.play();  // Play the video
+        this.style.display = 'none';  // Hide the play button
+    });
+</script>
+
+</head>
+<body>
+    <img src="download.png" alt="ze guard" class="corner-image">
+</body>
+</html>

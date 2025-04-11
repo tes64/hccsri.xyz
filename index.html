@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hccsri's Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark">
+  <!-- Video overlay (hidden by default) -->
+  <div id="video-container" class="video-container">
+    <video id="kj-flex-video">
+      <source src="output.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="container">
+    <!-- Colorful gradient blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    
+    <!-- Audio visualization -->
+    <canvas id="visualization-canvas" class="visualization-canvas"></canvas>
+    
+    <!-- Profile Card -->
+    <div class="card">
+      <!-- Profile Image -->
+      <div class="profile-image">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/profile.png-M4EcwPguuLyCeMnajEH6e7W58JRQpi.webp" alt="mi!!!">
+      </div>
+      
+      <!-- Name -->
+      <h1 class="name">haiiiii!!!!, i'm hccsri</h1>
+
+      <!-- Bio -->
+      <p class="bio">welcome to my silly website :3. I love tech, gaming, and uhm uhmmm doing sillys!!!!</p>
+      
+      <!-- Social Links -->
+      <div class="social">
+        <p>Discord: <span class="discord-name">hccsri</span></p>
+      </div>
+      
+      <!-- Whack-a-Mole Game Link -->
+      <a href="/whack-a-mole/whack-a-mole.html" class="game-link">play ze silli game!!!!!</a>
+
+      <!-- Theme Toggle -->
+      <button class="theme-toggle">Toggle Theme</button>
+    </div>
+  </div>
+
+  <!-- Mobile Music Player Button -->
+  <button id="mobile-music-btn" aria-label="Open music player">
+    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+      <path d="M9 18V5l12-2v13"></path>
+      <circle cx="6" cy="18" r="3"></circle>
+      <circle cx="18" cy="16" r="3"></circle>
+    </svg>
+  </button>
+
+  <!-- Desktop MP3 Player -->
+  <div id="mp3-container" class="desktop-player">
+    <button id="toggle-mp3" aria-label="Toggle music player">
+      <span class="music-icon">🎵</span>
+    </button>
+    <div id="mp3-player">
+      <div class="player-header">
+        <div class="now-playing-badge">Now Playing</div>
+        <h2 id="song-name">Select a song</h2>
+        <p id="artist-name">—</p>
+      </div>
+      
+      <div class="album-art">
+        <div class="album-image-container">
+          <img id="album-image" src="/placeholder.svg?height=180&width=180" alt="Album art">
+        </div>
+        <div class="vinyl-record">
+          <div class="vinyl-center"></div>
+        </div>
+      </div>
+      
+      <div class="progress-container">
+        <span id="current-time">0:00</span>
+        <div class="progress-bar-container">
+          <div id="progress-bar-bg"></div>
+          <div id="progress-bar"></div>
+          <input type="range" id="seek-slider" min="0" max="100" value="0">
+        </div>
+        <span id="duration">0:00</span>
+      </div>
+      
+      <div class="controls-container">
+        <button id="shuffle-btn" class="control-btn" aria-label="Shuffle">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+            <polyline points="16 3 21 3 21 8"></polyline>
+            <line x1="4" y1="20" x2="21" y2="3"></line>
+            <polyline points="21 16 21 21 16 21"></polyline>
+            <line x1="15" y1="15" x2="21" y2="21"></line>
+            <line x1="4" y1="4" x2="9" y2="9"></line>
+          </svg>
+        </button>
+        <button id="prev-btn" class="control-btn" aria-label="Previous">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+            <polygon points="19 20 9 12 19 4 19 20"></polygon>
+            <line x1="5" y1="19" x2="5" y2="5"></line>
+          </svg>
+        </button>
+        <button id="play-pause" class="control-btn play-btn" aria-label="Play">
+          <svg id="play-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <svg id="pause-icon" class="hidden" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+          </svg>
+        </button>
+        <button id="next-btn" class="control-btn" aria-label="Next">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+            <polygon points="5 4 15 12 5 20 5 4"></polygon>
+            <line x1="19" y1="5" x2="19" y2="19"></line>
+          </svg>
+        </button>
+        <button id="loop-btn" class="control-btn" aria-label="Loop">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+            <path d="M17 1l4 4-4 4"></path>
+            <path d="M3 11V9a4 4 0 014-4h14"></path>
+            <path d="M7 23l-4-4 4-4"></path>
+            <path d="M21 13v2a4 4 0 01-4 4H3"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="volume-container">
+        <button id="mute-btn" class="volume-btn" aria-label="Mute">
+          <svg id="volume-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path id="volume-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path id="volume-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+          <svg id="mute-icon" class="hidden" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+        <div class="volume-slider-container">
+          <input type="range" id="volume-slider" min="0" max="100" value="70">
+          <div id="volume-level"></div>
+        </div>
+        <span id="volume-percent">70%</span>
+      </div>
+      
+      <div class="playlist-container">
+        <h3>Playlist</h3>
+        <ul id="playlist"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile MP3 Player -->
+  <div id="mobile-player-overlay" class="hidden">
+    <div id="mobile-player">
+      <div class="mobile-player-handle">
+        <div class="handle-bar"></div>
+      </div>
+      
+      <div class="mobile-player-header">
+        <button id="mobile-close-btn" aria-label="Close player">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="mobile-header-text">
+          <h2>Music Player</h2>
+        </div>
+        <button id="mobile-playlist-btn" aria-label="Show playlist">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="mobile-player-content">
+        <div class="mobile-now-playing">
+          <div class="mobile-album-art">
+            <div class="mobile-album-image-container">
+              <img id="mobile-album-image" src="/placeholder.svg?height=200&width=200" alt="Album art">
+            </div>
+            <div class="mobile-vinyl-record">
+              <div class="mobile-vinyl-center"></div>
+            </div>
+          </div>
+          
+          <div class="mobile-song-info">
+            <h3 id="mobile-song-name">Select a song</h3>
+            <p id="mobile-artist-name">—</p>
+          </div>
+          
+          <div class="mobile-progress">
+            <div class="mobile-time-display">
+              <span id="mobile-current-time">0:00</span>
+              <span id="mobile-duration">0:00</span>
+            </div>
+            <div class="mobile-progress-bar-container">
+              <div id="mobile-progress-bar"></div>
+              <input type="range" id="mobile-seek-slider" min="0" max="100" value="0">
+            </div>
+          </div>
+          
+          <div class="mobile-controls">
+            <button id="mobile-shuffle-btn" class="mobile-control-btn" aria-label="Shuffle">
+              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                <polyline points="16 3 21 3 21 8"></polyline>
+                <line x1="4" y1="20" x2="21" y2="3"></line>
+                <polyline points="21 16 21 21 16 21"></polyline>
+                <line x1="15" y1="15" x2="21" y2="21"></line>
+                <line x1="4" y1="4" x2="9" y2="9"></line>
+              </svg>
+            </button>
+            <button id="mobile-prev-btn" class="mobile-control-btn" aria-label="Previous">
+              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                <line x1="5" y1="19" x2="5" y2="5"></line>
+              </svg>
+            </button>
+            <button id="mobile-play-pause" class="mobile-control-btn mobile-play-btn" aria-label="Play">
+              <svg id="mobile-play-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+              <svg id="mobile-pause-icon" class="hidden" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                <rect x="6" y="4" width="4" height="16"></rect>
+                <rect x="14" y="4" width="4" height="16"></rect>
+              </svg>
+            </button>
+            <button id="mobile-next-btn" class="mobile-control-btn" aria-label="Next">
+              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                <line x1="19" y1="5" x2="19" y2="19"></line>
+              </svg>
+            </button>
+            <button id="mobile-loop-btn" class="mobile-control-btn" aria-label="Loop">
+              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M17 1l4 4-4 4"></path>
+                <path d="M3 11V9a4 4 0 014-4h14"></path>
+                <path d="M7 23l-4-4 4-4"></path>
+                <path d="M21 13v2a4 4 0 01-4 4H3"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <div class="mobile-playlist hidden">
+          <h3>Playlist</h3>
+          <ul id="mobile-playlist-items"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="audio-player">
+    <source src="/placeholder.svg" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
