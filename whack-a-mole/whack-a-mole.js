@@ -267,7 +267,7 @@ startButton.addEventListener("click", startGame)
 resetButton.addEventListener("click", resetGame)
 playAgainButton.addEventListener("click", startGame)
 homeButton.addEventListener("click", () => {
-  window.location.href = "index.html"
+  window.location.href = "/"
 })
 
 // Add event listeners to each hole
