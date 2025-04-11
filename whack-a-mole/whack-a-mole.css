@@ -1,0 +1,531 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container */
+  .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    overflow: hidden;
+    transition: background 0.5s ease;
+  }
+  
+  /* Dark and Light theme base styles */
+  body.dark {
+    color: #e5e5e5;
+    background-color: #1a1a2e;
+  }
+  
+  body.light {
+    color: #333;
+    background-color: #f0f2f5;
+  }
+  
+  /* Gradient background */
+  body.dark .container {
+    background: radial-gradient(circle at 50% 50%, #2a1a3a 0%, #1f1f3a 25%, #1a1a2e 50%, #2d1a2e 75%, #3a1a2e 100%);
+  }
+  
+  body.light .container {
+    background: radial-gradient(circle at 50% 50%, #f0e7ff 0%, #dbeafe 25%, #e0f2fe 50%, #fce7f3 75%, #fbcfe8 100%);
+  }
+  
+  /* Animated blobs */
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+    filter: blur(60px);
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 1; /* Ensure blobs are behind the game but visible */
+  }
+  
+  .blob-1 {
+    top: 25%;
+    left: 25%;
+    width: 24rem;
+    height: 24rem;
+    animation: blob 15s infinite alternate;
+  }
+  
+  .blob-2 {
+    bottom: 25%;
+    right: 25%;
+    width: 20rem;
+    height: 20rem;
+    animation: blob 20s infinite alternate-reverse;
+    animation-delay: 2s;
+  }
+  
+  .blob-3 {
+    top: 50%;
+    right: 33%;
+    width: 18rem;
+    height: 18rem;
+    animation: blob 18s infinite alternate;
+    animation-delay: 4s;
+  }
+  
+  body.dark .blob-1 {
+    background: linear-gradient(135deg, #ff6bc1 0%, #9333ea 100%);
+  }
+  
+  body.light .blob-1 {
+    background: linear-gradient(135deg, #ff6bc1 0%, #c026d3 100%);
+  }
+  
+  body.dark .blob-2 {
+    background: linear-gradient(135deg, #4f46e5 0%, #2563eb 100%);
+  }
+  
+  body.light .blob-2 {
+    background: linear-gradient(135deg, #818cf8 0%, #60a5fa 100%);
+  }
+  
+  body.dark .blob-3 {
+    background: linear-gradient(135deg, #7e22ce 0%, #be185d 100%);
+  }
+  
+  body.light .blob-3 {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  }
+  
+  /* Animations */
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+  
+  /* Audio Visualization */
+  .visualization-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+  
+  /* Game Container */
+  .game-container {
+    width: 100%;
+    max-width: 500px; /* Reduced from 600px */
+    border-radius: 1rem;
+    padding: 1.5rem; /* Reduced from 2rem */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Reduced from 1.5rem */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    position: relative;
+  }
+  
+  body.dark .game-container {
+    background-color: rgba(26, 26, 46, 0.4); /* More transparent: 0.6 -> 0.4 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px); /* Reduced blur */
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  body.light .game-container {
+    background-color: rgba(255, 255, 255, 0.4); /* More transparent: 0.6 -> 0.4 */
+    border: 1px solid rgba(255, 107, 193, 0.2);
+    backdrop-filter: blur(8px); /* Reduced blur */
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  /* Game Header */
+  .game-header {
+    text-align: center;
+  }
+  
+  .game-title {
+    font-size: 2rem; /* Reduced from 2.5rem */
+    font-weight: bold;
+    margin-bottom: 0.75rem; /* Reduced from 1rem */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  
+  body.dark .game-title {
+    background-image: linear-gradient(to right, #ff6bc1, #ff4aaf);
+  }
+  
+  body.light .game-title {
+    background-image: linear-gradient(to right, #ff4aaf, #ff1a8b);
+  }
+  
+  .game-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Reduced from 2rem */
+    margin-bottom: 0.75rem; /* Reduced from 1rem */
+    font-size: 1.1rem; /* Reduced from 1.25rem */
+  }
+  
+  .score-container,
+  .time-container {
+    padding: 0.4rem 0.8rem; /* Reduced from 0.5rem 1rem */
+    border-radius: 0.5rem;
+  }
+  
+  body.dark .score-container,
+  body.dark .time-container {
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly more visible */
+  }
+  
+  body.light .score-container,
+  body.light .time-container {
+    background-color: rgba(0, 0, 0, 0.08); /* Slightly more visible */
+  }
+  
+  #score,
+  #time {
+    font-weight: bold;
+    margin-left: 0.5rem;
+  }
+  
+  .game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem; /* Reduced from 1rem */
+    flex-wrap: wrap;
+  }
+  
+  .control-button {
+    padding: 0.4rem 1.2rem; /* Reduced from 0.5rem 1.5rem */
+    border: none;
+    border-radius: 0.25rem;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+    font-size: 0.9rem; /* Added to make text smaller */
+  }
+  
+  .control-button:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+  }
+  
+  .control-button:active {
+    transform: translateY(1px);
+  }
+  
+  body.dark .control-button,
+  body.dark .theme-toggle {
+    background-image: linear-gradient(to right, rgba(255, 107, 193, 0.9), rgba(255, 74, 175, 0.9));
+  }
+  
+  body.light .control-button,
+  body.light .theme-toggle {
+    background-image: linear-gradient(to right, rgba(255, 74, 175, 0.9), rgba(255, 26, 139, 0.9));
+  }
+  
+  .difficulty-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .difficulty-select {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  body.dark .difficulty-select {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e5e5e5;
+  }
+  
+  body.light .difficulty-select {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #333;
+  }
+  
+  /* Game Board */
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.75rem; /* Reduced from 1rem */
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px; /* Added to constrain board size */
+  }
+  
+  .hole-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+  }
+  
+  .hole {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  body.dark .hole {
+    background-color: rgba(17, 17, 17, 0.7); /* More transparent */
+  }
+  
+  body.light .hole {
+    background-color: rgba(51, 51, 51, 0.7); /* More transparent */
+  }
+  
+  .mole {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    width: 70%;
+    height: 70%;
+    background-image: url("https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTaHYovrS7pLoGyoSCUvsFl4SnXrKFOPwsW6F4uPmbbK0i921uBP23GGRMkdT9atxlh_U0EeI5fvgosU3avDt7nkw");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    transition: transform 0.1s ease-in-out;
+  }
+  
+  .hole.up .mole {
+    transform: translateX(-50%) translateY(0);
+  }
+  
+  .hole.bonked .mole {
+    background-image: url("https://media.discordapp.net/attachments/1327641562926022656/1355409826372522045/sdfsfrhf.png?ex=67e8d344&is=67e781c4&hm=3eff9a347e5985aa41899062ab43c4907d02fdde648d4cf12a8c5115e51205ee&=&format=webp&quality=lossless&width=506&height=506");
+  }
+  
+  /* Game Footer */
+  .game-footer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  /* Theme toggle button */
+  .theme-toggle {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+  
+  .theme-toggle:hover {
+    opacity: 0.9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+  }
+  
+  .theme-toggle:active {
+    transform: translateY(1px);
+  }
+  
+  body.dark .theme-toggle {
+    background-image: linear-gradient(to right, #ff6bc1, #ff4aaf);
+  }
+  
+  body.light .theme-toggle {
+    background-image: linear-gradient(to right, #ff4aaf, #ff1a8b);
+  }
+  
+  /* Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  .modal-content {
+    width: 90%;
+    max-width: 350px; /* Reduced from 400px */
+    padding: 1.5rem; /* Reduced from 2rem */
+    border-radius: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem; /* Reduced from 1.5rem */
+  }
+  
+  body.dark .modal-content {
+    background-color: rgba(26, 26, 46, 0.85); /* More transparent: 0.9 -> 0.85 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  body.light .modal-content {
+    background-color: rgba(255, 255, 255, 0.85); /* More transparent: 0.9 -> 0.85 */
+    border: 1px solid rgba(255, 107, 193, 0.2);
+  }
+  
+  .modal-content h2 {
+    font-size: 1.8rem; /* Reduced from 2rem */
+  }
+  
+  .modal-content p {
+    font-size: 1.1rem; /* Reduced from 1.25rem */
+  }
+  
+  #final-score {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 640px) {
+    .game-container {
+      padding: 1.2rem; /* Reduced from 1.5rem */
+      max-width: 90%; /* Use percentage for better mobile scaling */
+    }
+  
+    .game-title {
+      font-size: 1.7rem; /* Reduced from 2rem */
+    }
+  
+    .game-stats {
+      font-size: 0.9rem; /* Reduced from 1rem */
+      gap: 0.8rem; /* Reduced from 1rem */
+    }
+  
+    .game-controls {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .game-board {
+      gap: 0.4rem; /* Reduced from 0.5rem */
+    }
+  }
+  
+  /* Video container styling */
+  .video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: none;
+    background-color: black;
+  }
+  
+  .video-container.visible {
+    display: block;
+  }
+  
+  #kj-flex-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Add this to your existing animations */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  .fade-out-animation {
+    animation: fadeOut 2s ease forwards;
+  }
+  
+  .fade-out {
+    animation: fadeOut 2s ease forwards;
+  }
+  
+  /* Hammer animation */
+  @keyframes hammer {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-20deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  .hole.bonked::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images-cdn.ubuy.co.id/633b2650aad9ff305a12b30f-16-ounce-claw-hammer-basic-hand.jpg");
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: hammer 0.2s ease-in-out;
+    pointer-events: none;
+  }
+  
+  

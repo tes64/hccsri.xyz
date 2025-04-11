@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hccsri's Whack-a-Mole</title>
+  <link rel="stylesheet" href="whack-a-mole.css">
+</head>
+<body class="dark">
+  <!-- Video overlay (hidden by default) -->
+  <div id="video-container" class="video-container">
+    <video id="kj-flex-video">
+      <source src="output.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="container">
+    <!-- Colorful gradient blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    
+    <!-- Audio visualization -->
+    <canvas id="visualization-canvas" class="visualization-canvas"></canvas>
+    
+    <!-- Game Container -->
+    <div class="game-container">
+      <div class="game-header">
+        <h1 class="game-title">Whack-a-Mole!</h1>
+        <div class="game-stats">
+          <div class="score-container">
+            <span>Score:</span>
+            <span id="score">0</span>
+          </div>
+          <div class="time-container">
+            <span>Time:</span>
+            <span id="time">30</span>s
+          </div>
+        </div>
+        <div class="game-controls">
+          <button id="start-button" class="control-button">Start</button>
+          <button id="reset-button" class="control-button">Reset</button>
+          <div class="difficulty-container">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty" class="difficulty-select">
+              <option value="easy">Easy</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <div class="game-board">
+        <div class="hole-container">
+          <div class="hole" id="hole-0">
+            <div class="mole"></div>
+          </div>
+        </div>
+        <div class="hole-container">
+          <div class="hole" id="hole-1">
+            <div class="mole"></div>
+          </div>
+        </div>
+        <div class="hole-container">
+          <div class="hole" id="hole-2">
+            <div class="mole"></div>
+          </div>
+        </div>
+        <div class="hole-container">
+          <div class="hole" id="hole-3">
+            <div class="mole"></div>
+          </div>
+        </div>
+        <div class="hole-container">
+          <div class="hole" id="hole-4">
+            <div class="mole"></div>
+          </div>
+        </div>
+        <div class="hole-container">
+          <div class="hole" id="hole-5">
+            <div class="mole"></div>
+          </div>
+        </div>
+        <div class="hole-container">
+          <div class="hole" id="hole-6">
+            <div class="mole"></div>
+          </div>
+        </div>
+        <div class="hole-container">
+          <div class="hole" id="hole-7">
+            <div class="mole"></div>
+          </div>
+        </div>
+        <div class="hole-container">
+          <div class="hole" id="hole-8">
+            <div class="mole"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="game-footer">
+        <button id="home-button" class="control-button">Home</button>
+        <button id="theme-toggle" class="theme-toggle">Theme</button>
+        <button id="sound-toggle" class="control-button">🔊</button>
+      </div>
+      
+      <!-- Game Over Modal -->
+      <div id="game-over-modal" class="modal hidden">
+        <div class="modal-content">
+          <h2>Game Over!</h2>
+          <p>Your final score: <span id="final-score">0</span></p>
+          <button id="play-again-button" class="control-button">Play Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sound effects (hidden) -->
+  <audio id="whack-sound" src="awp.mp3" preload="auto"></audio>
+  <audio id="game-start-sound" src="https://assets.codepen.io/21542/game-start.mp3" preload="auto"></audio>
+  <audio id="game-over-sound" src="videoplayback (4).m4a" preload="auto"></audio>
+
+  <script src="whack-a-mole.js"></script>
+</body>
+</html>
+
