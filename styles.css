@@ -1251,3 +1251,36 @@ body.dark .game-link {
 body.light .game-link {
   background-image: linear-gradient(to right, #ff4aaf, #ff1a8b);
 }
+
+/* pizzareia button */
+.pizzaeria {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.pizzaeria:hover {
+  opacity: 0.9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.pizzaeria:active {
+  transform: translateY(1px);
+}
+
+body.dark .pizzaeria {
+  background-image: linear-gradient(to right, #ff6bc1, #ff4aaf);
+}
+
+body.light .pizzaeria {
+  background-image: linear-gradient(to right, #ff4aaf, #ff1a8b);
+}
