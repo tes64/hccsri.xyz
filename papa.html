@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papa's Pizzeria - hccsri's Website</title>
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Game-specific styles */
+    #game-container {
+      position: relative;
+      width: 100%;
+      max-width: 1024px;
+      height: 768px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+      background-color: #000;
+    }
+    
+    .game-card {
+      width: 100%;
+      max-width: 1024px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      z-index: 10;
+    }
+    
+    .game-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .game-title {
+      font-size: 2rem;
+      font-weight: bold;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    
+    body.dark .game-title {
+      background-image: linear-gradient(to right, #ff6bc1, #ff4aaf);
+    }
+    
+    body.light .game-title {
+      background-image: linear-gradient(to right, #ff4aaf, #ff1a8b);
+    }
+    
+    .back-button {
+      padding: 0.5rem 1.5rem;
+      border: none;
+      border-radius: 0.25rem;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    
+    .back-button:hover {
+      opacity: 0.9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(-1px);
+    }
+    
+    body.dark .back-button {
+      background-image: linear-gradient(to right, #ff6bc1, #ff4aaf);
+    }
+    
+    body.light .back-button {
+      background-image: linear-gradient(to right, #ff4aaf, #ff1a8b);
+    }
+    
+    .game-instructions {
+      text-align: center;
+      margin-top: 1rem;
+      max-width: 800px;
+    }
+    
+    body.dark .game-instructions {
+      color: #d1d5db;
+    }
+    
+    body.light .game-instructions {
+      color: #4b5563;
+    }
+    
+    @media (max-width: 1024px) {
+      #game-container {
+        height: 600px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      #game-container {
+        height: 500px;
+      }
+      
+      .game-title {
+        font-size: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      #game-container {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body class="dark">
+  <!-- Colorful gradient blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  
+  <!-- Audio visualization -->
+  <canvas id="visualization-canvas" class="visualization-canvas"></canvas>
+  
+  <div class="container">
+    <div class="game-card">
+      <div class="game-header">
+        <h1 class="game-title">Papa's Pizzeria</h1>
+        <a href="index.html" class="back-button">Back to Home</a>
+      </div>
+      
+      <div id="game-container">
+        <!-- Ruffle will insert the Flash player here -->
+      </div>
+      
+      <div class="game-instructions">
+        <p>papa pizeria</p>
+        <p>you know how to fucking play this game</p>
+      </div>
+      
+      <!-- Theme Toggle -->
+      <button class="theme-toggle">Toggle Theme</button>
+    </div>
+  </div>
+
+  <script>
+    // DOM elements
+    const themeToggle = document.querySelector(".theme-toggle");
+    const body = document.body;
+    const container = document.querySelector(".container");
+
+    // Initial theme (default to dark)
+    let isDark = true;
+
+    // Theme toggle functionality
+    themeToggle.addEventListener("click", () => {
+      isDark = !isDark;
+
+      if (isDark) {
+        body.classList.remove("light");
+        body.classList.add("dark");
+      } else {
+        body.classList.remove("dark");
+        body.classList.add("light");
+      }
+
+      // Update background after theme change
+      updateBackground(lastMouseX, lastMouseY);
+    });
+
+    // Track mouse position
+    let lastMouseX = 0.5;
+    let lastMouseY = 0.5;
+
+    // Mouse movement effect for background
+    document.addEventListener("mousemove", (e) => {
+      lastMouseX = e.clientX / window.innerWidth;
+      lastMouseY = e.clientY / window.innerHeight;
+
+      updateBackground(lastMouseX, lastMouseY);
+    });
+
+    // Update background based on mouse position
+    function updateBackground(x, y) {
+      // Calculate dynamic background position based on mouse movement
+      const bgPositionX = 50 + (x - 0.5) * 10;
+      const bgPositionY = 50 + (y - 0.5) * 10;
+
+      // Update the radial gradient position
+      container.style.background = isDark
+        ? `radial-gradient(circle at ${bgPositionX}% ${bgPositionY}%, #2a1a3a 0%, #1f1f3a 25%, #1a1a2e 50%, #2d1a2e 75%, #3a1a2e 100%)`
+        : `radial-gradient(circle at ${bgPositionX}% ${bgPositionY}%, #f0e7ff 0%, #dbeafe 25%, #e0f2fe 50%, #fce7f3 75%, #fbcfe8 100%)`;
+    }
+
+    // Initialize background
+    updateBackground(0.5, 0.5);
+
+    // Initialize Ruffle Flash Player
+    window.RufflePlayer = window.RufflePlayer || {};
+    window.addEventListener("load", () => {
+      const ruffle = window.RufflePlayer.newest();
+      const player = ruffle.createPlayer();
+      document.getElementById("game-container").appendChild(player);
+      player.load("games/papaspizzeria_v2.swf"); // make sure the path is correct
+      
+      // Set player configuration
+      player.style.width = "100%";
+      player.style.height = "100%";
+    });
+  </script>
+</body>
+</html>
