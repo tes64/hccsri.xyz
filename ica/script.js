@@ -1,7 +1,7 @@
 // Add corner image
 setTimeout(() => {
   const img = document.createElement("img")
-  img.src = "../images/download.png" // Change path if needed
+  img.src = "download (1).png" // Change path if needed
   img.alt = "ze guard"
   img.className = "corner-image"
 
