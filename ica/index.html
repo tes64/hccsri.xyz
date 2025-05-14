@@ -18,7 +18,11 @@
     const usernameInput = document.getElementById('username');
     const scoreInput = document.getElementById('score');
     const addUserBtn = document.getElementById('add-user');
-    let users = {};
+    let users = JSON.parse(localStorage.getItem('users')) || {};
+
+    function saveToLocalStorage() {
+      localStorage.setItem('users', JSON.stringify(users));
+    }
 
     function renderList() {
       userList.innerHTML = '';
@@ -27,13 +31,13 @@
         li.textContent = user + ': ' + users[user];
         const addBtn = document.createElement('button');
         addBtn.textContent = '+';
-        addBtn.onclick = () => { users[user]++; renderList(); };
+        addBtn.onclick = () => { users[user]++; saveToLocalStorage(); renderList(); };
         const subBtn = document.createElement('button');
         subBtn.textContent = '-';
-        subBtn.onclick = () => { users[user]--; renderList(); };
+        subBtn.onclick = () => { users[user]--; saveToLocalStorage(); renderList(); };
         const delBtn = document.createElement('button');
         delBtn.textContent = 'Remove';
-        delBtn.onclick = () => { delete users[user]; renderList(); };
+        delBtn.onclick = () => { delete users[user]; saveToLocalStorage(); renderList(); };
         li.appendChild(addBtn);
         li.appendChild(subBtn);
         li.appendChild(delBtn);
@@ -46,6 +50,7 @@
       const score = parseInt(scoreInput.value, 10) || 0;
       if (!name) return;
       users[name] = score;
+      saveToLocalStorage();
       renderList();
       usernameInput.value = '';
       scoreInput.value = 0;
