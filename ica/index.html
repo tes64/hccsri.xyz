@@ -3,42 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ic a score thingy</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Score Tracker</title>
 </head>
-<body class="dark">
-  <div class="container">
-    <div class="card">
-      <div id="login-section">
-        <h2>loing</h2>
-        <input type="text" id="username" placeholder="Enter username">
-        <input type="password" id="password" placeholder="Enter password">
-        <button id="login-btn">login</button>
-      </div>
-
-      <div id="score-section" class="hidden">
-        <h2>score tracka</h2>
-        <p>haiiiiii :3, <span id="user-display"></span>!</p>
-        <div class="score-container">
-          <h3>current larping score: <span id="score-display">0</span></h3>
-          <div class="score-buttons">
-            <button id="increment-btn">+1</button>
-            <button id="decrement-btn">-1</button>
-          </div>
-        </div>
-        <div class="new-score-container">
-          <h3>add new score</h3>
-          <input type="text" id="new-score-name" placeholder="Enter name">
-          <button id="add-score-btn">Add Score</button>
-        </div>
-        <div class="scoreboard-container">
-          <h3>scoreboard</h3>
-          <div id="scoreboard"></div>
-        </div>
-        <button id="logout-btn">logout</button>
-      </div>
-    </div>
+<body>
+  <h2>Score Tracker</h2>
+  <div>
+    <input type="text" id="username" placeholder="Username">
+    <input type="number" id="score" placeholder="Score" value="0">
+    <button id="add-user">Add/Update User</button>
   </div>
-  <script src="script.js"></script>
+  <ul id="user-list"></ul>
+  <script>
+    const userList = document.getElementById('user-list');
+    const usernameInput = document.getElementById('username');
+    const scoreInput = document.getElementById('score');
+    const addUserBtn = document.getElementById('add-user');
+    let users = {};
+
+    function renderList() {
+      userList.innerHTML = '';
+      Object.keys(users).forEach(user => {
+        const li = document.createElement('li');
+        li.textContent = user + ': ' + users[user];
+        const addBtn = document.createElement('button');
+        addBtn.textContent = '+';
+        addBtn.onclick = () => { users[user]++; renderList(); };
+        const subBtn = document.createElement('button');
+        subBtn.textContent = '-';
+        subBtn.onclick = () => { users[user]--; renderList(); };
+        const delBtn = document.createElement('button');
+        delBtn.textContent = 'Remove';
+        delBtn.onclick = () => { delete users[user]; renderList(); };
+        li.appendChild(addBtn);
+        li.appendChild(subBtn);
+        li.appendChild(delBtn);
+        userList.appendChild(li);
+      });
+    }
+
+    addUserBtn.onclick = () => {
+      const name = usernameInput.value.trim();
+      const score = parseInt(scoreInput.value, 10) || 0;
+      if (!name) return;
+      users[name] = score;
+      renderList();
+      usernameInput.value = '';
+      scoreInput.value = 0;
+    };
+  </script>
 </body>
 </html>
