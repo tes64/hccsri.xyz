@@ -29,13 +29,13 @@
       Object.keys(users).forEach(user => {
         let label = '';
         const score = users[user];
-        if (score >= 10 && score < 20) label = 'A-1 ';
-        else if (score >= 20 && score < 30) label = 'A-2 ';
-        else if (score >= 30 && score < 40) label = 'A-3 ';
-        else if (score >= 40 && score < 50) label = 'A-4 ';
-        else if (score >= 50 && score < 60) label = 'A-5 ';
-        else if (score >= 60 && score < 70) label = 'A-6 ';
-        else if (score >= 70) label = 'A-7  ';
+        if (score >= 1 && score < 10) label = 'A-1 ';
+        else if (score >= 10 && score < 20) label = 'A-2 ';
+        else if (score >= 20 && score < 30) label = 'A-3 ';
+        else if (score >= 30 && score < 40) label = 'A-4 ';
+        else if (score >= 40 && score < 50) label = 'A-5 ';
+        else if (score >= 50 && score < 60) label = 'A-6 ';
+        else if (score >= 60 && score < 70) label = 'A-7 ';
         const li = document.createElement('li');
         li.textContent = label + user + ': ' + score;
         const addBtn = document.createElement('button');
