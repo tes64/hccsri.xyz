@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ic a score thingy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark">
+  <div class="container">
+    <div class="card">
+      <div id="login-section">
+        <h2>loing</h2>
+        <input type="text" id="username" placeholder="Enter username">
+        <input type="password" id="password" placeholder="Enter password">
+        <button id="login-btn">login</button>
+      </div>
+
+      <div id="score-section" class="hidden">
+        <h2>score tracka</h2>
+        <p>haiiiiii :3, <span id="user-display"></span>!</p>
+        <div class="score-container">
+          <h3>current larping score: <span id="score-display">0</span></h3>
+          <div class="score-buttons">
+            <button id="increment-btn">+1</button>
+            <button id="decrement-btn">-1</button>
+          </div>
+        </div>
+        <div class="new-score-container">
+          <h3>add new score</h3>
+          <input type="text" id="new-score-name" placeholder="Enter name">
+          <button id="add-score-btn">Add Score</button>
+        </div>
+        <div class="scoreboard-container">
+          <h3>scoreboard</h3>
+          <div id="scoreboard"></div>
+        </div>
+        <button id="logout-btn">logout</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

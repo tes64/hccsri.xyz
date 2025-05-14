@@ -1,0 +1,2837 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: radial-gradient(circle at 50% 50%, #2a1a3a 0%, #1f1f3a 25%, #1a1a2e 50%, #2d1a2e 75%, #3a1a2e 100%);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+  display: none;
+}
+
+h2, h3 {
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #6366f1;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #4f46e5;
+}
+
+.score-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.score-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.score-buttons button {
+  flex: 1;
+}
+
+#increment-btn {
+  background: #22c55e;
+}
+
+#increment-btn:hover {
+  background: #16a34a;
+}
+
+#decrement-btn {
+  background: #ef4444;
+}
+
+#decrement-btn:hover {
+  background: #dc2626;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#scoreboard .delete-btn {
+  padding: 2px 4px;
+  font-size: 8px;
+  width: auto;
+  margin: 0 3px;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.95);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+
+
+#logout-btn {
+  background: #6b7280;
+}
+
+#logout-btn:hover {
+  background: #4b5563;
+}
+
+/* Delete Button */
+#delete-btn {
+  padding: 1px 2px;
+  font-size: 6px;
+  width: auto;
+  margin: 0 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+#delete-btn:hover {
+  transform: scale(0.9);
+}
+
+.new-score-container,
+.scoreboard-container {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+#scoreboard {
+  color: #fff;
+  margin-top: 10px;
+}
+
+#scoreboard div {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#scoreboard div:last-child {
+  border-bottom: none;
+}
+
+#add-score-btn {
+  background: #8b5cf6;
+}
+
+#add-score-btn:hover {
+  background: #7c3aed;
+}
+
+#score-display {
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+#user-display {
+  color: #6366f1;
+  font-weight: bold;
+}
